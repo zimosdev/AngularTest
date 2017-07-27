@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/*
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+*/
+body {
+    padding: auto;
+    background:floralwhite;
+}
+[md-raised-button]{
+width: 100%;
+}
+md-grid-list{
+    max-width: 1403px;
+    margin: 16px;
+}
+md-sidenav-container{
+    height: 100vh;
+}
+
+md-sidenav{
+    width: 320px;
+}
+

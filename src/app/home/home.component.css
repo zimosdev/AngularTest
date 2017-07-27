@@ -1,0 +1,32 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+    padding: auto;
+    background:floralwhite;
+}
+[md-raised-button]{
+width: 100%;
+}
+md-toolbar-rows{
+    justify-content: space-between;
+}
+.p{
+    margin: 16px;
+}
+md-grid-list{
+    max-width: 1403px;
+    margin: 16px;
+}
+md-sidenav-container{
+    height: 100vh;
+}
+md-sidenav-cont{
+    height: 100vh;
+}
+md-sidenav{
+    width: 320px;
+}
+
+.example-spacer {
+ 
+  flex: 1 1 auto;
+}

@@ -1,0 +1,70 @@
+
+<md-toolbar color="primary">
+    <button md-icon-button (click)="sidenavleft.open()">
+<md-icon class="md-24" >menu</md-icon>
+</button>￼
+   
+<span>MyCompany</span>
+
+<span class="example-spacer"></span>
+<button md-button [mdMenuTriggerFor]="appMenu"><md-icon>more_vert</md-icon> 
+</button>
+  <button md-icon-button (click)="sidenavright.open()">
+<md-icon class="md-24" >face</md-icon>
+</button>￼
+
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+<!-- SideNav Left -->
+<md-sidenav-container>
+       <md-sidenav align="start" side="closed" #sidenavleft>
+           hhhhh
+       </md-sidenav>
+       <!-- End SideNav Left -->
+   
+<!-- SideNav Right -->
+
+  
+    <md-sidenav align="end" side="closed" #sidenavright>
+          <md-tab-group>
+        <md-tab>
+            <template md-tab-label>Details</template>
+            <template md-tab-content></template>
+            <button md-raised-button (click)="sidenav.close()" color="accent">Close</button>
+        </md-tab>
+         <md-tab>
+            <template md-tab-label>feed</template>
+            <template md-tab-content></template>
+        </md-tab>
+    </md-tab-group>
+   <md-grid-list cols="4" rowHeigth="150px">
+
+ </md-grid-list>   
+    </md-sidenav>    
+<!-- End SideNav Right -->
+   <h1>Hi {{currentUser.firstName}}!
+<button [routerLink]="['/login']" class="btn btn-primary">Logout</button>
+</h1>
+   
+    <h3>All registered users:</h3>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}})
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    </ul>
+
+</md-sidenav-container>
+
+  
+ 
+
+   
+    
+
+   
