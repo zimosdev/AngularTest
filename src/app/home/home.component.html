@@ -14,20 +14,35 @@
 </button>￼
 
 </md-toolbar>
-
+<!-- Start Menu-->
 <md-menu #appMenu="mdMenu">
-  <button md-menu-item> Settings </button>
-  <button md-menu-item> Help </button>
+  <button md-menu-item><md-icon class="md-12" >Settings</md-icon> Settings </button>
+  <button md-menu-item> <md-icon class="md-12" >help</md-icon>Help </button>
 </md-menu>
-
-<!-- SideNav Left -->
+<!-- End Menu-->
+<!-- Start SideNav Left -->
 <md-sidenav-container>
-       <md-sidenav align="start" side="closed" #sidenavleft>
-           hhhhh
-       </md-sidenav>
-       <!-- End SideNav Left -->
+    <md-sidenav align="start" side="closed" #sidenavleft >
+       
+           
+            <button md-raised-button (click)="sidenavleft.close()" color="accent">Close</button>
+
+  
+
+
+
+<button md-menu-item> <md-icon class="md-16" >account_box</md-icon>Profil  </button>
+
+<button md-menu-item><md-icon class="md-16" >language</md-icon>Connect </button>
+
+<button md-menu-item> <md-icon class="md-16" >phone</md-icon>Call me </button>
+
+<button md-menu-item> <md-icon class="md-16" >info</md-icon>Information </button>
+  
+    </md-sidenav>
+<!-- End SideNav Left -->
    
-<!-- SideNav Right -->
+<!-- Start SideNav Right -->
 
   
     <md-sidenav align="end" side="closed" #sidenavright>
@@ -35,7 +50,7 @@
         <md-tab>
             <template md-tab-label>Details</template>
             <template md-tab-content></template>
-            <button md-raised-button (click)="sidenav.close()" color="accent">Close</button>
+            <button md-raised-button (click)="sidenavright.close()" color="accent">Close</button>
         </md-tab>
          <md-tab>
             <template md-tab-label>feed</template>
