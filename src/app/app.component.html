@@ -1,14 +1,83 @@
-<!--The content below is only a placeholder and can be replaced.-->
 
+<md-toolbar color="primary">
+    <button md-icon-button (click)="sidenavleft.open()">
+<md-icon class="md-24" >menu</md-icon>
+</button>￼
+   
+<span>MyCompany</span>
 
-<div class=""> 
-<alert></alert>
-            <router-outlet></router-outlet>
-    <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
+<span class="example-spacer"></span>
+
+<button md-icon-button (click)="sidenavright.open()">
+    <md-icon class="md-24" >more_vert</md-icon>
+</button>￼
+
+</md-toolbar>
+<!-- Start SideNav --> 
+<md-sidenav-container>
+<ul class="nav nav-tabs">
+
+    <li><a uiSref="home" uiSrefActive="active">Home</a></li>
+    <li> <a uiSref="contact" uiSrefActive="active">Contact</a></li>
+      <li><a uiSref="login" uiSrefActive="active">Login</a></li>
+    <li> <a uiSref="register" uiSrefActive="active">Register</a></li>
+</ul> 
+<ui-view ></ui-view>
+<!-- Start Menu-->
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item><md-icon class="md-12" >Settings</md-icon> Settings </button>
+  <button md-menu-item> <md-icon class="md-12" >help</md-icon>Help </button>
+</md-menu>
+<!-- End Menu-->
+
+<!-- Start SideNav Left -->   
+<md-sidenav align="start" side="closed" #sidenavleft >
+        
+        <button md-raised-button (click)="sidenavleft.close()" color="accent">Close</button>
+        
+        <button md-menu-item (click)="sidenavleft.close()" uiSref="profil" uiSrefActive="active">
             
-           
-        </div>
-    </div>
-</div>
+            <md-icon class="md-16" >account_box</md-icon>Profil
+        
+        </button>
+        
+        
+        <button md-menu-item (click)="sidenavleft.close()" uiSref="connect" uiSrefActive="active">
+            
+            <md-icon class="md-16" >language </md-icon>Connect
+        
+        </button>
+
+        
+        <button md-menu-item (click)="sidenavleft.close()" uiSref="phone" uiSrefActive="active">
+            
+            <md-icon class="md-16" >phone </md-icon>Phone
+        
+        </button>
+
+        <button md-menu-item (click)="sidenavleft.close()" uiSref="info" uiSrefActive="active">
+            
+            <md-icon class="md-16" >info</md-icon>Information
+        
+        </button>
+</md-sidenav>
+<!-- End SideNav Left -->
+   
+<!-- Start SideNav Right -->
+
+  
+    <md-sidenav align="end" side="closed" #sidenavright>
+            <button md-raised-button (click)="sidenavright.close()" color="accent">Close</button>          
+    </md-sidenav>    
+<!-- End SideNav Right -->    
+</md-sidenav-container>
+
+  
+ 
+
+   
+    
+
+   
+    
 
