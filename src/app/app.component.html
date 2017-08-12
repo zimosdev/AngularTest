@@ -15,36 +15,33 @@
 </md-toolbar>
 <!-- Start SideNav --> 
 <md-sidenav-container>
-<ul class="nav nav-tabs">
 
-    <li><a uiSref="home" uiSrefActive="active">Home</a></li>
-    <li> <a uiSref="contact" uiSrefActive="active">Contact</a></li>
-      <li><a uiSref="login" uiSrefActive="active">Login</a></li>
-    <li> <a uiSref="register" uiSrefActive="active">Register</a></li>
-</ul> 
-<ui-view ></ui-view>
-<!-- Start Menu-->
-<md-menu #appMenu="mdMenu">
-  <button md-menu-item><md-icon class="md-12" >Settings</md-icon> Settings </button>
-  <button md-menu-item> <md-icon class="md-12" >help</md-icon>Help </button>
-</md-menu>
-<!-- End Menu-->
+<navbar></navbar>
+<div class="tab-content">
+    <!-- Nested view  -->
+    <ui-view></ui-view>
+</div>
 
 <!-- Start SideNav Left -->   
 <md-sidenav align="start" side="closed" #sidenavleft >
         
         <button md-raised-button (click)="sidenavleft.close()" color="accent">Close</button>
         
-        <button md-menu-item (click)="sidenavleft.close()" uiSref="profil" uiSrefActive="active">
+<!-- Start Menu-->
+<md-menu #appMenu="mdMenu">
+
+</md-menu>
+<!-- End Menu-->
+        <button md-menu-item (click)="sidenavleft.close()"  uiSref="login" uiSrefActive="active">
             
-            <md-icon class="md-16" >account_box</md-icon>Profil
+            <md-icon class="md-16" >account_box</md-icon>Login
         
         </button>
         
         
-        <button md-menu-item (click)="sidenavleft.close()" uiSref="connect" uiSrefActive="active">
+        <button md-menu-item (click)="sidenavleft.close()" uiSref="phone" uiSrefActive="active">
             
-            <md-icon class="md-16" >language </md-icon>Connect
+            <md-icon class="md-16" >language </md-icon>Register
         
         </button>
 
@@ -60,6 +57,8 @@
             <md-icon class="md-16" >info</md-icon>Information
         
         </button>
+
+        
 </md-sidenav>
 <!-- End SideNav Left -->
    

@@ -1,17 +1,6 @@
-<!---->
+
  
-
-   <h1>Hi {{currentUser.firstName}}!
-<button [routerLink]="['/login']" class="btn btn-primary">Logout</button>
-</h1>
-
-    <h3>All registered users:</h3>
-    <ul>
-        <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}})
-            - <a (click)="deleteUser(user.id)">Delete</a>
-        </li>
-    </ul>
+<h1> Home Page </h1>
 
 
 

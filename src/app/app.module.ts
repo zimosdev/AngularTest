@@ -1,35 +1,49 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { MaterialModule }from '@angular/material';
+import { HttpModule  } from '@angular/http';
+import { AppComponent }  from './app.component';
+//used to create templeate angular/material
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule,MdCardModule,MdMenuModule,MdToolbarModule,MdIconModule, MdCheckboxModule} from '@angular/material';
+import {CdkTableModule} from '@angular/cdk';
+import {UIRouterModule} from "@uirouter/angular";
+/* Feature Components */
+import { HelloComponent }  from './hello/hello.component';
+import { HomeComponent }  from './home/home.component';
+import { LoginComponent }      from './login/login.component';
+import { RegisterComponent }   from './register/register.component';
+import { NavbarComponent }    from './navbar/navbar.component';
+/* App Router */
+import { UIRouterConfigFn }   from "./app.router";
+import { appStates }          from "./app.states";
+
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
-import { AppComponent }  from './app.component';
-import { routing }        from './app.routing';
+
+
+
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
-import { HomeComponent } from './home/index';
-import { LoginComponent } from './login/index';
-import { RegisterComponent } from './register/index';
-//used to create templeate angular/material
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule,MdCardModule,MdMenuModule,MdToolbarModule,MdIconModule, MdCheckboxModule} from '@angular/material';
-
-import {CdkTableModule} from '@angular/cdk';
 
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
+         UIRouterModule.forRoot({ 
+                      states: appStates,
+                      useHash: false,
+                      config: UIRouterConfigFn
+         }) ,
         HttpModule,
-        routing,
+      
         BrowserAnimationsModule,
         MdButtonModule,
         MdCardModule,
@@ -43,7 +57,9 @@ import {CdkTableModule} from '@angular/cdk';
         
     declarations: [
         AppComponent,
+        NavbarComponent,
         AlertComponent,
+        HelloComponent,
         HomeComponent,
         LoginComponent,
         RegisterComponent
@@ -52,7 +68,8 @@ import {CdkTableModule} from '@angular/cdk';
       
   
     providers: [
-        AuthGuard,
+     
+      AuthGuard,
         AlertService,
         AuthenticationService,
         UserService,
@@ -61,6 +78,8 @@ import {CdkTableModule} from '@angular/cdk';
         fakeBackendProvider,
         MockBackend,
         BaseRequestOptions
+    
+       
     ],
     bootstrap: [AppComponent ]
     

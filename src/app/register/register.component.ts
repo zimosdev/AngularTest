@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { AlertService, UserService } from '../_services/index';
 
+import { UIRouter }  from "@uirouter/angular";
+
 @Component({
     moduleId: module.id,
+    selector: 'register',
     templateUrl: 'register.component.html'
 })
 
@@ -13,20 +15,24 @@ export class RegisterComponent {
     loading = false;
 
     constructor(
-        private router: Router,
-        private userService: UserService,
-        private alertService: AlertService) { }
+         private router: UIRouter,
+         private userService: UserService,
+         
+        
+       ) { }
 
     register() {
-        this.loading = true;
+       this.loading = true;
         this.userService.create(this.model)
-            .subscribe(
+         .subscribe(
                 data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
+                  
+                    console.log("register");
+                     this.router.urlRouter;
+                    this.loading = false;
                 },
                 error => {
-                    this.alertService.error(error);
+                 console.log("Not register");
                     this.loading = false;
                 });
     }
